@@ -14,13 +14,13 @@ public final class DeathNoteImpl implements DeathNote {
         if (ruleNumber<1 || ruleNumber>RULES.size()) {
             throw new IllegalArgumentException("Rule number " + ruleNumber + "do not exist\n");
         }
-        throw new IllegalArgumentException();
+        return RULES.get(ruleNumber-1);
     }
 
     @Override
     public void writeName(String name) {
         if (name==null) {
-            throw new NullPointerException("Name passed as parameter is null")
+            throw new NullPointerException("Name passed as parameter is null");
         }
         throw new IllegalArgumentException();
     }
