@@ -70,7 +70,7 @@ class TestDeathNote {
     @Test
     void testDeathDetails () throws InterruptedException {
         Throwable exception = assertThrows(IllegalStateException.class, ()-> deathNote.writeDetails(TEST_DETAILS));
-        assertEquals("Name is not written in the death note yet", exception.getMessage());
+        assertEquals("details are null or there is no name in the deathnote", exception.getMessage());
         deathNote.writeName(TEST_NAME_1);
         assertEquals("", deathNote.getDeathDetails(TEST_NAME_1));
         assertTrue(deathNote.writeDetails("ran for too long"));
